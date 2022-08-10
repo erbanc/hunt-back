@@ -9,12 +9,14 @@ spring:
     hibernate:
       ddl-auto: validate
   datasource:
-    url: jdbc:postgresql://localhost:5433/hunt
-    username: erbanc
-    password: nikitatess
+    url: jdbc:postgresql://DATABASE_URL:5432/d52v5nokf6n4a3
+    username: rcbajupgfbkydq
+    password: 90e118ef9972075572fe902ee6e6c99f645b3dae5d5847e52d55b64c21ef7378
     hikari:
       schema: hunt
     driverClassName: org.postgresql.Driver
 
   liquibase:
+    clear-checksums: true
+    drop-first: true
     enabled: true

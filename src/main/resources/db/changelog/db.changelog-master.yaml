@@ -72,7 +72,22 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: text
+                  type: bigint
                   constraints:
                     primaryKey: true
+                    nullable: false
+              - column:
+                  name: id_user
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_bad_guesses
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total_guesses
+                  type: bigint
+                  constraints:
                     nullable: false

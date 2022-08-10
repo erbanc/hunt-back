@@ -12,5 +12,5 @@ class UserServiceImpl(private val userRepository: UserRepository) : UserService 
             email = it.email,
             questionReached = it.questionReached
         )
-    }.orElseThrow()
+    }.orElseThrow { RuntimeException("No user with this username") }
 }
