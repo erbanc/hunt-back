@@ -1,0 +1,78 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: erbanc
+      changes:
+        - createTable:
+            tableName: app_user
+            columns:
+              - column:
+                  name: username
+                  type: text
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: stats_id
+                  type: text
+              - column:
+                  name: question_reached
+                  type: bigint
+
+  - changeSet:
+      id: 2
+      author: erbanc
+      changes:
+        - createTable:
+            tableName: question
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: answer
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
+                  name: html
+                  type: text
+                  constraints:
+                    nullable: true
+              - column:
+                  name: text
+                  type: text
+                  constraints:
+                    nullable: true
+
+  - changeSet:
+      id: 3
+      author: erbanc
+      changes:
+        - createTable:
+            tableName: user_stats
+            columns:
+              - column:
+                  name: id
+                  type: text
+                  constraints:
+                    primaryKey: true
+                    nullable: false

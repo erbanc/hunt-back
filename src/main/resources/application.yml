@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /hunt
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:postgresql://localhost:5433/hunt
+    username: erbanc
+    password: nikitatess
+    hikari:
+      schema: hunt
+    driverClassName: org.postgresql.Driver
+
+  liquibase:
+    enabled: true
