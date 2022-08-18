@@ -1,10 +1,8 @@
 server:
   port: 8080
-  servlet:
-    context-path: /hunt
 spring:
   profiles:
-    active: dev
+    active: prod
   jpa:
     database: POSTGRESQL
     show-sql: true
