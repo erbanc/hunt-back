@@ -71,15 +71,10 @@ databaseChangeLog:
             tableName: user_stats
             columns:
               - column:
-                  name: id
-                  type: bigint
+                  name: username
+                  type: text
                   constraints:
                     primaryKey: true
-                    nullable: false
-              - column:
-                  name: id_user
-                  type: bigint
-                  constraints:
                     nullable: false
               - column:
                   name: total_bad_guesses

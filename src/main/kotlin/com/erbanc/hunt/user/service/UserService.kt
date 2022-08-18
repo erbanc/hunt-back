@@ -5,4 +5,6 @@ import com.erbanc.hunt.user.bean.UserBean
 interface UserService {
 
     fun getUser(username: String): UserBean
+
+    fun addUser(user: UserBean, password: String)
 }

@@ -1,19 +1,14 @@
 package com.erbanc.hunt.stats.entity
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Id
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 @Table(name = "user_stats")
 class UserStatsEntity (
 
-    @Id var id: Long,
+    @Id @Column(name="username") var username: String,
 
-    @Column(name="id_user") var idUser: Long,
+    @Column(name = "total_bad_guesses", nullable = false) var totalBadGuesses: Long = 0,
 
-    @Column(name = "total_bad_guesses") var totalBadGuesses: Long,
-
-    @Column(name = "total_guesses") var totalGuesses: Long
+    @Column(name = "total_guesses", nullable = false) var totalGuesses: Long = 0
 )
