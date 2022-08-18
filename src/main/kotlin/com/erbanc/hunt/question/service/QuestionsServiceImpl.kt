@@ -4,13 +4,15 @@ import com.erbanc.hunt.question.bean.AccessTestBean
 import com.erbanc.hunt.question.bean.AnswerBean
 import com.erbanc.hunt.question.bean.QuestionBean
 import com.erbanc.hunt.question.repository.QuestionsRepository
+import com.erbanc.hunt.stats.service.UserStatsService
 import com.erbanc.hunt.user.repository.UserRepository
 import org.springframework.stereotype.Service
 
 @Service
 class QuestionsServiceImpl(
     private val questionsRepository: QuestionsRepository,
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val userStatsService: UserStatsService
 ) : QuestionsService {
 
     override fun getQuestions(): List<QuestionBean> = questionsRepository.findAll().map { entity ->
@@ -29,6 +31,8 @@ class QuestionsServiceImpl(
         if (correct) {
             userRepository.setQuestionReached(answerBean.id + 1, answerBean.username)
         }
+
+        userStatsService.updateStats(answerBean.username, correct)
 
         return correct
     }

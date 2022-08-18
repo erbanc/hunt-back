@@ -23,9 +23,6 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: stats_id
-                  type: text
-              - column:
                   name: question_reached
                   type: bigint
 
@@ -86,3 +83,17 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     nullable: false
+
+  -  changeSet:
+       id:  initQuestions
+       author:  erbanc
+       changes:
+         -  sqlFile:
+             path:  ./db/changelog/scripts/init-questions.sql
+
+  -  changeSet:
+       id:  initUserRoot
+       author:  erbanc
+       changes:
+         -  sqlFile:
+             path:  ./db/changelog/scripts/init-user-root.sql

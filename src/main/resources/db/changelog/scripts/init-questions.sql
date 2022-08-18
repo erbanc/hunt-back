@@ -1,0 +1,1 @@
+INSERT INTO question(id,name, answer, html, text) VALUES (1, 'nom1', 'reponse1', '<b>Ceci est un test</b>', 'Hahaha tu ne trouveras jamais !')
