@@ -88,12 +88,12 @@ databaseChangeLog:
        id:  initQuestions
        author:  erbanc
        changes:
-         -  sqlFile:
-             path:  ./db/changelog/scripts/init-questions.sql
+         -  sql:
+             sql:  INSERT INTO question(id,name, answer, html, text) VALUES (1, 'nom1', 'reponse1', '<b>Ceci est un test</b>', 'Hahaha tu ne trouveras jamais !')
 
   -  changeSet:
        id:  initUserRoot
        author:  erbanc
        changes:
-         -  sqlFile:
-             path:  ./db/changelog/scripts/init-user-root.sql
+         -  sql:
+             sql:  INSERT INTO app_user(username, email, password, question_reached) VALUES ('admin', 'test@test.fr', 'admin', 1)
