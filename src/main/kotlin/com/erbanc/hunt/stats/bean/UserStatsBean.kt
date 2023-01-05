@@ -2,11 +2,13 @@ package com.erbanc.hunt.stats.bean
 
 class UserStatsBean(
 
-    private val id: Long,
+    var username: String,
 
-    private var idUser: Long,
+    var questionsSolved: Int,
 
-    private var totalBadGuesses: Long,
+    var totalBadGuesses: Int,
 
-    private var totalGuesses: Long
+    var totalGuesses: Int,
+
+    var rank: Int
 )

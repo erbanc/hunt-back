@@ -26,10 +26,10 @@ class QuestionsServiceImpl(
     override fun getQuestion(id: Long): QuestionBean = questionsRepository.getReferenceById(id).toBean()
 
     override fun tryAnswer(answerBean: AnswerBean): Boolean {
-        val correct = questionsRepository.tryAnswer(answerBean.id, answerBean.answer)
+        val correct = questionsRepository.tryAnswer(answerBean.questionId, answerBean.answer)
 
         if (correct) {
-            userRepository.setQuestionReached(answerBean.id + 1, answerBean.username)
+            userRepository.setQuestionReached(answerBean.questionId + 1, answerBean.username)
         }
 
         userStatsService.updateStats(answerBean.username, correct)
