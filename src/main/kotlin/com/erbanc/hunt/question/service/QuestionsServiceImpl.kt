@@ -20,8 +20,8 @@ class QuestionsServiceImpl(
     }
 
     override fun deleteQuestion(id: Long) = questionsRepository.deleteById(id)
-    override fun isAccessible(accessTestBean: AccessTestBean): Boolean =
-        userRepository.isAccessible(accessTestBean.username, accessTestBean.idQuestion)
+    override fun isQuestionAccessibleByUser(accessTestBean: AccessTestBean): Boolean =
+        userRepository.isQuestionAccessibleByUser(accessTestBean.username, accessTestBean.idQuestion)
 
     override fun getQuestion(id: Long): QuestionBean = questionsRepository.getReferenceById(id).toBean()
 

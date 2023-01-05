@@ -23,7 +23,7 @@ class QuestionsController(private val questionsService: QuestionsService) {
     fun getQuestion(@PathVariable id: Long): QuestionBean = questionsService.getQuestion(id)
 
     @PostMapping("/is-accessible")
-    fun isQuestionAccessible(@RequestBody accessTestBean: AccessTestBean): Boolean = questionsService.isAccessible(accessTestBean)
+    fun isQuestionAccessible(@RequestBody accessTestBean: AccessTestBean): Boolean = questionsService.isQuestionAccessibleByUser(accessTestBean)
 
     @PostMapping("/answer")
     fun tryAnswer(@RequestBody answerBean: AnswerBean): Boolean = questionsService.tryAnswer(answerBean)

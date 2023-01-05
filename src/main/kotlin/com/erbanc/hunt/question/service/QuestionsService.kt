@@ -9,7 +9,7 @@ interface QuestionsService {
     fun getQuestions(): List<QuestionBean>
     fun saveQuestion(question: QuestionBean)
     fun deleteQuestion(id: Long)
-    fun isAccessible(accessTestBean: AccessTestBean): Boolean
+    fun isQuestionAccessibleByUser(accessTestBean: AccessTestBean): Boolean
     fun getQuestion(id: Long): QuestionBean
     fun tryAnswer(answerBean: AnswerBean): Boolean
 }

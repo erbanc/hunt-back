@@ -48,8 +48,8 @@ class UserStatsServiceImpl(private val userStatsRepository: UserStatsRepository)
         })
     }
 
-    fun getRank(userStats: UserStatsEntity, allUserStats: List<UserStatsEntity>): Int =
+    fun getRank(userStats: UserStatsEntity, allUserStats: List<UserStatsEntity>): Long =
         allUserStats.filter { userStatsBean ->
             userStatsBean.getNumberSolvedQuestions() > userStats.getNumberSolvedQuestions() || (userStatsBean.getNumberSolvedQuestions() == userStats.getNumberSolvedQuestions() && userStatsBean.totalBadGuesses < userStats.totalBadGuesses)
-        }.size
+        }.size.toLong()
 }

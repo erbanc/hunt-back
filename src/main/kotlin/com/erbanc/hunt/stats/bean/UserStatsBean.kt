@@ -4,11 +4,11 @@ class UserStatsBean(
 
     var username: String,
 
-    var questionsSolved: Int,
+    var questionsSolved: Long,
 
-    var totalBadGuesses: Int,
+    var totalBadGuesses: Long,
 
-    var totalGuesses: Int,
+    var totalGuesses: Long,
 
-    var rank: Int
+    var rank: Long
 )

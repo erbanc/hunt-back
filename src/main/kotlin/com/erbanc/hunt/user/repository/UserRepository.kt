@@ -17,7 +17,7 @@ interface UserRepository : JpaRepository<UserEntity, String> {
     fun setQuestionReached(questionReached: Long, username: String)
 
     @Query("select (count(u) > 0) from UserEntity u where u.username = ?1 and u.questionReached >= ?2")
-    fun isAccessible(username: String, questionReached: Long): Boolean
+    fun isQuestionAccessibleByUser(username: String, questionReached: Long): Boolean
 
     @Query("SELECT entity FROM UserEntity entity WHERE entity.username = :username AND entity.password = :password")
     fun getByLogin(@Param("username") username: String, @Param("password") password: String): List<UserEntity>
