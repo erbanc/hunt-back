@@ -15,6 +15,5 @@ jobs:
         run: mvn package
       - name: Build and push image to Docker Hub
         run: |
-          version=$(echo "$GITHUB_REF" | cut -d'/' -f3)
-          sudo docker build -t erbanc/hunt-back:$version .
-          sudo docker push erbanc/hunt-back:$version
+          sudo docker build -t erbanc/hunt-back:latest .
+          sudo docker push erbanc/hunt-back:latest
