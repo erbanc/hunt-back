@@ -16,6 +16,6 @@ jobs:
       - name: Build and push image to Docker Hub
         run: |
           date_tag=$(date +%Y-%m-%d-%H:%M)
-          echo date_tag
+          echo $date_tag
           sudo docker build -t erbanc/hunt-back:$date_tag .
           sudo docker push erbanc/hunt-back:$date_tag
