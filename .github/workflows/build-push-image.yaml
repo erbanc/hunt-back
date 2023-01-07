@@ -15,7 +15,6 @@ jobs:
         run: mvn package
       - name: Build and push image to Docker Hub
         run: |
-          # Generate the current date in the format "YYYYMMDD"
           date_tag=$(date +%Y-%m-%d\ %H:%M)
           sudo docker build -t erbanc/hunt-back:$date_tag .
           sudo docker push erbanc/hunt-back:$date_tag .
