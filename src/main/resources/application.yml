@@ -11,9 +11,9 @@ spring:
     hibernate:
       ddl-auto: validate
   datasource:
-    url: jdbc:postgresql://DATABASE_URL:5432/d52v5nokf6n4a3
-    username: rcbajupgfbkydq
-    password: 90e118ef9972075572fe902ee6e6c99f645b3dae5d5847e52d55b64c21ef7378
+    url: jdbc:postgresql://192.168.1.48:5433/hunt
+    username: hunt_usr
+    password: baldur
     hikari:
       schema: hunt
     driverClassName: org.postgresql.Driver
